@@ -1,0 +1,399 @@
+/* Material 3 Expressive Design System */
+
+:root {
+    /* Color Palette - Constructed Coffee Green Theme */
+    --md-sys-color-primary: #006e1c;
+    --md-sys-color-on-primary: #ffffff;
+    --md-sys-color-primary-container: #94f990;
+    --md-sys-color-on-primary-container: #002204;
+
+    --md-sys-color-secondary: #52634f;
+    --md-sys-color-on-secondary: #ffffff;
+    --md-sys-color-secondary-container: #d5e8cf;
+    --md-sys-color-on-secondary-container: #111f0f;
+
+    --md-sys-color-tertiary: #38656a;
+    --md-sys-color-on-tertiary: #ffffff;
+    --md-sys-color-tertiary-container: #bcebf0;
+    --md-sys-color-on-tertiary-container: #002023;
+
+    --md-sys-color-error: #ba1a1a;
+    --md-sys-color-on-error: #ffffff;
+
+    --md-sys-color-background: #fcfdf6;
+    --md-sys-color-on-background: #1a1c19;
+
+    --md-sys-color-surface: #fcfdf6;
+    --md-sys-color-on-surface: #1a1c19;
+    --md-sys-color-surface-variant: #dee5d8;
+    --md-sys-color-on-surface-variant: #424940;
+
+    --md-sys-color-outline: #72796f;
+    --md-sys-color-outline-variant: #c2c9bd;
+
+    /* Elevations */
+    --md-sys-elevation-1: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+    --md-sys-elevation-2: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 6px 2px rgba(0, 0, 0, 0.15);
+    --md-sys-elevation-3: 0 4px 8px 3px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.3);
+
+    /* Typography */
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'Fira Code', monospace;
+
+    /* Shapes */
+    --md-sys-shape-corner-small: 8px;
+    --md-sys-shape-corner-medium: 12px;
+    --md-sys-shape-corner-large: 16px;
+    --md-sys-shape-corner-extra-large: 28px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --md-sys-color-primary: #78dc77;
+        --md-sys-color-on-primary: #00390a;
+        --md-sys-color-primary-container: #005313;
+        --md-sys-color-on-primary-container: #94f990;
+
+        --md-sys-color-secondary: #b9ccb4;
+        --md-sys-color-on-secondary: #253423;
+        --md-sys-color-secondary-container: #3b4b39;
+        --md-sys-color-on-secondary-container: #d5e8cf;
+
+        --md-sys-color-background: #1a1c19;
+        --md-sys-color-on-background: #e2e3dd;
+
+        --md-sys-color-surface: #1a1c19;
+        --md-sys-color-on-surface: #e2e3dd;
+        --md-sys-color-surface-variant: #424940;
+        --md-sys-color-on-surface-variant: #c2c9bd;
+
+        --md-sys-color-outline: #8c9388;
+        --md-sys-color-outline-variant: #424940;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--md-sys-color-background);
+    color: var(--md-sys-color-on-background);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: var(--md-sys-color-on-background);
+}
+
+h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Navigation (Material 3 Navigation Bar style) */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--md-sys-color-surface);
+    /* Solid background for cleaner M3 look */
+    border-bottom: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.nav-link {
+    color: var(--md-sys-color-on-surface-variant);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--md-sys-shape-corner-extra-large);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-link:hover {
+    background-color: var(--md-sys-color-surface-variant);
+    color: var(--md-sys-color-on-surface);
+}
+
+.nav-link.active {
+    background-color: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+}
+
+/* Material Layout Cards */
+.glass-panel {
+    background: var(--md-sys-color-surface);
+    border-radius: var(--md-sys-shape-corner-extra-large);
+    padding: 2.5rem;
+    box-shadow: var(--md-sys-elevation-1);
+    transition: box-shadow 0.3s ease;
+    border: 1px solid var(--md-sys-color-outline-variant);
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-panel:hover {
+    box-shadow: var(--md-sys-elevation-2);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+/* Forms */
+.form-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.form-section:last-child {
+    border-bottom: none;
+}
+
+label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--md-sys-color-on-surface-variant);
+    margin-bottom: 0.5rem;
+}
+
+.glass-input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: var(--md-sys-shape-corner-small);
+    border: 1px solid var(--md-sys-color-outline);
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface);
+    font-family: var(--font-body);
+    transition: all 0.2s ease;
+}
+
+.glass-input:focus {
+    outline: none;
+    border-color: var(--md-sys-color-primary);
+    border-width: 2px;
+    /* padding adjustment to prevent layout shift */
+    padding: calc(1rem - 1px);
+}
+
+/* Buttons */
+.glass-btn {
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    padding: 1rem 2rem;
+    border-radius: 100px;
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: var(--md-sys-elevation-1);
+}
+
+.glass-btn:hover {
+    background-color: color-mix(in srgb, var(--md-sys-color-primary), white 10%);
+    box-shadow: var(--md-sys-elevation-2);
+    transform: translateY(-1px);
+}
+
+/* Matrix Effect Class (Scoping) */
+.matrix-effect {
+    /* No special style needed, js handles text */
+}
+
+/* Coffee Cup Hero */
+.coffee-hero {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 5rem;
+}
+
+.coffee-cup-container {
+    position: relative;
+    transform-origin: bottom center;
+    animation: float 6s ease-in-out infinite;
+}
+
+.cup-body {
+    width: 180px;
+    height: 140px;
+    background: linear-gradient(135deg, var(--md-sys-color-surface-variant), color-mix(in srgb, var(--md-sys-color-surface-variant), black 20%));
+    border-radius: 0 0 90px 90px;
+    position: relative;
+    box-shadow: inset -10px -10px 20px rgba(0, 0, 0, 0.2),
+        5px 20px 30px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.cup-body::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--md-sys-color-surface-variant);
+    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cup-content {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #3c2f2f, #1a1200);
+    z-index: 3;
+}
+
+.cup-handle {
+    position: absolute;
+    top: 10px;
+    right: -45px;
+    width: 60px;
+    height: 80px;
+    border: 12px solid var(--md-sys-color-surface-variant);
+    border-radius: 0 30px 60px 0;
+    z-index: 1;
+}
+
+/* Steam */
+.vapour-container {
+    position: absolute;
+    top: -50px;
+    left: 40px;
+    z-index: 1;
+    display: flex;
+    gap: 20px;
+}
+
+.vapour {
+    position: relative;
+    bottom: 0;
+    width: 8px;
+    height: 40px;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.6), transparent);
+    border-radius: 100px;
+    filter: blur(8px);
+    animation: rise 3s infinite linear;
+    opacity: 0;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0) scaleX(1);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: translateY(-40px) scaleX(3);
+    }
+
+    100% {
+        transform: translateY(-100px) scaleX(6);
+        opacity: 0;
+    }
+}
+
+
+.content-wrapper {
+    position: relative;
+    z-index: 10;
+}
+
+/* Drinks Grid Overrides */
+.drinks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.drink-card {
+    padding: 0;
+    /* Reset for M3 card with image */
+    background: var(--md-sys-color-surface-variant);
+    /* Slightly different bg for cards */
+    border: none;
+}
+
+.drink-content {
+    padding: 1.5rem;
+}
+
+/* FAB */
+.fab {
+    background-color: var(--md-sys-color-tertiary-container);
+    color: var(--md-sys-color-on-tertiary-container);
+    border-radius: 16px;
+    /* M3 "large FAB" uses rounded rect usually, or circle */
+    box-shadow: var(--md-sys-elevation-3);
+    cursor: pointer;
+}
+
+.fab:hover {
+    box-shadow: var(--md-sys-elevation-3);
+    background-color: color-mix(in srgb, var(--md-sys-color-tertiary-container), white 10%);
+}
