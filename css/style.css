@@ -138,6 +138,7 @@ nav:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0.7;
 }
 
 .hero-headline {
@@ -420,4 +421,5 @@ nav:hover {
     .philosophy-text p {
         text-align: left;
     }
+
 }
