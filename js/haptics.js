@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Add click vibration
         el.addEventListener('click', () => {
             if ("vibrate" in navigator) {
-                navigator.vibrate(15); // Light tick
+                navigator.vibrate(500); // Light tick
             }
         });
 
@@ -25,3 +25,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log("Haptics initialized on", interactiveElements.length, "elements.");
 });
+
