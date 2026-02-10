@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drinks Gallery | Coffee Lab</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* M3 Dialog Scoped Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            /* Darker dim */
+            z-index: 2000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .modal-overlay.open {
+            display: flex;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html" class="nav-link matrix-effect">Home</a>
+        <a href="brew.html" class="nav-link matrix-effect">Brew</a>
+        <a href="drinks.html" class="nav-link active matrix-effect">Drinks</a>
+        <a href="interpolator.html" class="nav-link matrix-effect">Dial-In</a>
+    </nav>
+
+    <div class="content-wrapper">
+        <main class="container">
+            <h1 class="matrix-effect" style="text-align: center;">Recipe Gallery</h1>
+
+            <div id="drinks-grid" class="drinks-grid">
+                <!-- Drink Cards will be injected here -->
+            </div>
+
+            <div id="empty-state" style="text-align: center; margin-top: 4rem; display: none;">
+                <p style="opacity: 0.6; font-size: 1.2rem; color: var(--md-sys-color-on-background);">No drinks saved
+                    yet.<br>Click the + button to add one.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Button -->
+    <button class="fab" id="add-drink-btn"
+        style="position: fixed; bottom: 2rem; right: 2rem; width: 56px; height: 56px; border: none; display: flex; align-items: center; justify-content: center; font-size: 24px;">+</button>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="drink-modal">
+        <div class="glass-panel modal-content">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h2 id="modal-title" style="margin: 0;">Add Drink</h2>
+                <button type="button" id="close-modal"
+                    style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--md-sys-color-on-surface);">&times;</button>
+            </div>
+            <form id="drink-form">
+                <input type="hidden" name="id">
+
+                <div class="form-section">
+                    <label>Drink Name</label>
+                    <input type="text" name="name" class="glass-input" placeholder="e.g. Iced Latte" required>
+                </div>
+
+                <div class="form-section">
+                    <label>Description / Recipe</label>
+                    <textarea name="description" class="glass-input" rows="3"
+                        placeholder="Double shot over ice..."></textarea>
+                </div>
+
+                <div class="form-section">
+                    <label>Image (Optional)</label>
+                    <!-- In a real app this handles file upload. For now we use a placeholder or file reader logic in js/recipes.js if implemented -->
+                    <input type="file" name="image" id="drink-image" class="glass-input" accept="image/*">
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; margin-top: 1rem;">
+                    <button type="submit" id="modal-save-btn" class="glass-btn">Save Drink</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/matrix.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/recipes.js"></script>
+    <script src="js/drinks-ui.js"></script>
+    <script src="js/haptics.js"></script>
+</body>
+
+</html>

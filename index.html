@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Lab | Precision Brewing</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Importing Roboto Flex for Variable Font capabilities (Weight + Width) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&display=swap"
+        rel="stylesheet">
+    <!-- Keep Inter for Body -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html" class="nav-link active matrix-effect">Home</a>
+        <a href="brew.html" class="nav-link matrix-effect">Brew</a>
+        <a href="drinks.html" class="nav-link matrix-effect">Drinks</a>
+        <a href="interpolator.html" class="nav-link matrix-effect">Dial-In</a>
+    </nav>
+
+    <!-- Magazine Hero -->
+    <div class="magazine-hero">
+        <div class="hero-content">
+            <!-- Huge Headline (Z-Index Low) - ID added for Dynamic JS -->
+            <h1 class="hero-headline" id="hero-headline">ETHIOPIA GUJI<br><span class="highlight">94°C</span></h1>
+
+            <!-- Product Image (Z-Index High) -->
+            <div class="hero-image-wrapper">
+                <img src="assets/hero_product.png" alt="Flair Espresso Go" class="hero-img">
+            </div>
+        </div>
+
+        <!-- Technical Label Overlay - ID added for Dynamic JS -->
+        <div class="tech-label-corner" id="hero-tech-label">
+            BATCH: 2026-001<br>
+            ROAST: LIGHT-OMNI<br>
+            LOC: 51.5°N, 0.1°W
+        </div>
+    </div>
+
+    <!-- Intro / CTA -->
+    <div class="content-wrapper">
+        <main class="container" style="margin-top: 5rem;">
+            <div class="glass-panel"
+                style="text-align: center; max-width: 600px; margin: 0 auto; border: 1px solid var(--md-sys-color-outline-variant);">
+                <h2 style="font-family: 'Roboto Flex', sans-serif; font-variation-settings: 'wght' 600, 'wdth' 100;">The
+                    Lab Report</h2>
+                <p style="margin-top: 1rem; opacity: 0.8; font-size: 1.1rem; line-height: 1.8;">
+                    Precision extraction isn't just science; it's art. Log your variables, track your pressure profiles,
+                    and perfect your morning ritual.
+                </p>
+                <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
+                    <a href="brew.html" class="glass-btn" style="text-decoration: none; display: inline-block;">Start
+                        Log</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- PHILOSOPHY SECTION (New) -->
+    <section class="philosophy-section">
+        <div class="philosophy-content">
+            <div style="text-align: center;">
+                <h3 class="philosophy-title">Die Metaphysik der Extraktion</h3>
+            </div>
+
+            <article class="philosophy-text">
+                <p>
+                    Für mich manifestiert sich im Kaffee weit mehr als die bloße Zubereitung eines Stimulans; es ist die
+                    vollendete Synthese aus physischer Unmittelbarkeit und intellektueller Akribie. Meine Philosophie
+                    begreift die Bohne als ein Medium der Transformation, bei dem das archaische Handwerk und die
+                    präzise Analyse eine untrennbare Einheit eingehen.
+                </p>
+                <p>
+                    Der Prozess beginnt bei der Alchemie des Röstens. Hierbei ist es das Ziel, der rohen Materie durch
+                    die bewusste Lenkung thermischer Prozesse jene verborgene Komplexität zu entlocken, die in der Natur
+                    angelegt, aber erst durch den menschlichen Geist vollendet wird. Es ist ein Akt der Veredelung, der
+                    die chemische Struktur in ein sensorisches Narrativ überführt. Diese Phase verlangt nach einer
+                    tiefgreifenden, datenbasierten Durchdringung, um die Gesetzmäßigkeiten von Physik und Chemie nicht
+                    nur zu beobachten, sondern sie gestalterisch zu beherrschen.
+                </p>
+                <p>
+                    In der Zubereitung selbst suche ich die haptische Resonanz. Das manuelle Handwerk ist für mich die
+                    essenzielle Rückbindung an das physische Sein. Wenn der Geist die Parameter der Extraktion –
+                    Temperatur, Druck und Zeit – in mathematischer Strenge kalkuliert, muss die Hand diese Theorie in
+                    die Praxis übersetzen. Dieses unmittelbare Feedback zwischen Mensch und Materie schafft eine
+                    Intimität mit dem Produkt, die keine Automatisierung jemals replizieren könnte. Es ist das Streben
+                    nach einer minimalistischen Ästhetik, bei der jedes Detail eine Funktion erfüllt und jede Bewegung
+                    einer inneren Ordnung folgt.
+                </p>
+                <p>
+                    Letztlich ist meine Kaffeekultur der Ausdruck eines tiefen Respekts vor der Qualität des
+                    Selbstgemachten. In einer Welt der flüchtigen Massenware setze ich auf die Beständigkeit des
+                    hochwertigen Handwerks und die ästhetische Klarheit des Designs. Kaffee ist somit eine fortwährende
+                    Suche nach der Quintessenz des Geschmacks – ein Dialog zwischen der Natur, der Wissenschaft und der
+                    schöpferischen Hand.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="js/matrix.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/hero-scroll.js"></script>
+    <script src="js/hero-dynamic.js"></script> <!-- Added Dynamic Logic -->
+    <script src="js/haptics.js"></script>
+</body>
+
+</html>
